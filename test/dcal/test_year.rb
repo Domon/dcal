@@ -3,27 +3,31 @@ require 'dcal'
 
 class TestYear < Test::Unit::TestCase
   def setup
-    @y = DCal::Year.new(2012)
+    @year = DCal::Year.new(2012)
   end
 
   def test_value
-    assert_equal 2012, @y.value
+    assert_equal 2012, @year.value
   end
 
   def test_comparable
-    assert_equal 2012, @y
+    assert_equal 2012, @year
   end
 
   def test_substraction
-    assert_equal 2011, @y - 1
+    assert_equal 2011, @year - 1
+  end
+
+  def test_to_i
+    assert_equal 2012, @year.to_i
   end
 
   def test_to_s
-    assert_equal "2012", @y.to_s
+    assert_equal "2012", @year.to_s
   end
 
   def test_inspect
-    assert_equal "#<DCal::Year 2012>", @y.inspect
+    assert_equal "#<DCal::Year 2012>", @year.inspect
   end
 
   def test_leap
