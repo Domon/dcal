@@ -20,7 +20,7 @@ module DCal
 
     def initialize(month, year)
       @month = month.to_i
-      @year  = year.to_i
+      @year  = DCal::Year.new(year)
     end
 
     def output
@@ -32,7 +32,7 @@ module DCal
     private
 
     def title
-      "#{MONTHNAMES[month]} #{year}".center(20)
+      "#{MONTHNAMES[month]} #{@year}".center(20)
     end
 
     def header
@@ -58,12 +58,7 @@ module DCal
     end
 
     def days_since_1970
-      (year - 1970) * 365 + leap_years_since_1970 + passed_days_in_year
-    end
-
-    def leap_years_since_1970
-      return 0 if year == 1970
-      (1970...year).select { |y| DCal::Year.new(y).leap? }.size
+      (@year - 1970) * 365 + @year.leap_years_since_1970 + passed_days_in_year
     end
 
     def passed_days_in_year
@@ -72,7 +67,7 @@ module DCal
     end
 
     def days_in_month(month)
-      return 29 if month == 2 && DCal::Year.new(year).leap?
+      return 29 if month == 2 && @year.leap?
       COMMON_YEAR_DAYS_IN_MONTH[month]
     end
   end
