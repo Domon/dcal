@@ -1,3 +1,5 @@
+require 'dcal/year'
+
 module DCal
   class Cal
     attr_reader :month, :year
@@ -61,7 +63,7 @@ module DCal
 
     def leap_years_since_1970
       return 0 if year == 1970
-      (1970...year).select { |y| in_leap_year?(y) }.size
+      (1970...year).select { |y| DCal::Year.new(y).leap? }.size
     end
 
     def passed_days_in_year
@@ -70,13 +72,8 @@ module DCal
     end
 
     def days_in_month(month)
-      return 29 if month == 2 && in_leap_year?(year)
+      return 29 if month == 2 && DCal::Year.new(year).leap?
       COMMON_YEAR_DAYS_IN_MONTH[month]
-    end
-
-    def in_leap_year?(year)
-      # ref: http://en.wikipedia.org/wiki/Leap_year#Algorithm
-      year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)
     end
   end
 end
