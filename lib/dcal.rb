@@ -1,5 +1,5 @@
 require 'dcal/version'
-require 'dcal/date'
+require 'dcal/cal'
 
 module DCal
 end

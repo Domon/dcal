@@ -3,4 +3,13 @@
 
 require 'dcal'
 
-puts "usage: cal month year"
+month = ARGV[0]
+year  = ARGV[1]
+
+unless month && year
+  puts "usage: cal month year"
+  exit
+end
+
+cal = DCal::Cal.new month, year
+print cal.output
