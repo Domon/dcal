@@ -41,14 +41,9 @@ module DCal
     def days
       days = Array.new(42, "  ")
       (1..@month.days_in_month).each do |day|
-        days[weekday_of_first_day + day - 1] = day.to_s.rjust(2)
+        days[@month.wday_of_first_day + day - 1] = day.to_s.rjust(2)
       end
       days
-    end
-
-    def weekday_of_first_day
-      # 1970-01-01 is Thursday (4).
-      (@month.days_since_1970 + 4) % 7
     end
   end
 end

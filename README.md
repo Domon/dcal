@@ -24,7 +24,6 @@ Please install Bundler 1.3.0+ by running:
 
 ## Todo
 
-* Move `Cal#weekday_of_first_day` to `Month`.
 * Refactor `Cal#days`.
 
 ## License

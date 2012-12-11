@@ -38,6 +38,11 @@ module DCal
       COMMON_YEAR_DAYS_IN_MONTH[@month]
     end
 
+    def wday_of_first_day
+      # 1970-01-01 is Thursday (4).
+      (days_since_1970 + 4) % 7
+    end
+
     # For inspect
     def to_s
       "#{@year}-#{@month}"
