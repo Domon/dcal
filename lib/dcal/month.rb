@@ -38,10 +38,12 @@ module DCal
       COMMON_YEAR_DAYS_IN_MONTH[@month]
     end
 
+    # For inspect
     def to_s
       "#{@year}-#{@month}"
     end
 
+    # For better output in console
     def inspect
       "#<#{self.class.name} #{to_s}>"
     end

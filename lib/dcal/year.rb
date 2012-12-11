@@ -2,8 +2,6 @@ module DCal
   class Year
     include Comparable
 
-    attr_reader :value
-
     def initialize(value)
       @value = value.to_i
 
@@ -24,24 +22,27 @@ module DCal
 
     def <=>(other)
       if other.integer?
-        value <=> other
+        to_i <=> other
       else
-        value <=> other.value
+        to_i <=> other.to_i
       end
     end
 
     def -(integer)
-      value - integer
+      to_i - integer
     end
 
+    # For calculations
     def to_i
       @value
     end
 
+    # For inspect
     def to_s
       @value.to_s
     end
 
+    # For better output in console
     def inspect
       "#<#{self.class.name} #{to_s}>"
     end
