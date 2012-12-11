@@ -24,7 +24,7 @@ Please install Bundler 1.3.0+ by running:
 
 ## Todo
 
-* Refactor `Cal#days`.
+This section is intentionally left blank.
 
 ## License
 

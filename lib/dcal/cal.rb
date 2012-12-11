@@ -34,16 +34,22 @@ module DCal
     end
 
     def weeks
-      weeks = days.each_slice(7).to_a
+      weeks = cells.each_slice(7).to_a
       weeks.map { |week| week.join(" ") }.join("\n")
     end
 
-    def days
-      days = Array.new(42, "  ")
-      (1..@month.days_in_month).each do |day|
-        days[@month.wday_of_first_day + day - 1] = day.to_s.rjust(2)
+    def cells
+      cells = Array.new(42, "  ")
+
+      days  = 1..@month.days_in_month
+      start = @month.wday_of_first_day
+
+      cells.each_index do |i|
+        day = i - start + 1
+        cells[i] = day.to_s.rjust(2) if days.cover?(day)
       end
-      days
+
+      cells
     end
   end
 end
