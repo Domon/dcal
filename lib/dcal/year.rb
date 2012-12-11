@@ -6,6 +6,10 @@ module DCal
 
     def initialize(value)
       @value = value.to_i
+
+      unless @value >= 1970
+        raise RangeError, "years before 1970 is currently not supported"
+      end
     end
 
     def leap?

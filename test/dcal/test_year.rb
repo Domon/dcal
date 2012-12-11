@@ -6,6 +6,10 @@ class TestYear < Test::Unit::TestCase
     @year = DCal::Year.new(2012)
   end
 
+  def test_new
+    assert_raise(RangeError) { DCal::Year.new(1900) }
+  end
+
   def test_value
     assert_equal 2012, @year.value
   end

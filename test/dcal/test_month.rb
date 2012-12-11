@@ -16,6 +16,10 @@ class TestMonth < Test::Unit::TestCase
     assert_equal       13 , DCal::Month::MONTHNAMES.size
   end
 
+  def test_new
+    assert_raise(RangeError) { DCal::Month.new(13, 2000) }
+  end
+
   def test_name
     assert 'January', @month.name
   end

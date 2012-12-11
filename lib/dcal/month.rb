@@ -19,6 +19,10 @@ module DCal
     def initialize(month, year)
       @month = month.to_i
       @year  = DCal::Year.new(year.to_i)
+
+      unless (1..12).include? @month
+        raise RangeError, "month must be between 1 and 12"
+      end
     end
 
     def name
