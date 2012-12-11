@@ -35,7 +35,7 @@ module DCal
 
     def weeks
       weeks = days.each_slice(7).to_a
-      weeks.map { |w| w.join(" ") }.join("\n")
+      weeks.map { |week| week.join(" ") }.join("\n")
     end
 
     def days
