@@ -20,8 +20,8 @@ module DCal
       @month = month.to_i
       @year  = DCal::Year.new(year.to_i)
 
-      unless (1..12).include? @month
-        raise RangeError, "month must be between 1 and 12"
+      unless (1..12).cover? @month
+        raise RangeError, "#{@month} is not a month number (1..12)"
       end
     end
 

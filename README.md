@@ -26,7 +26,6 @@ Please install Bundler 1.3.0+ by running:
 
 * Move `Cal#weekday_of_first_day` to `Month`.
 * Refactor `Cal#days`.
-* Validate input.
 
 ## License
 

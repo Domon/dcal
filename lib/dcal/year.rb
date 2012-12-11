@@ -5,8 +5,8 @@ module DCal
     def initialize(value)
       @value = value.to_i
 
-      unless @value >= 1970
-        raise RangeError, "years before 1970 is currently not supported"
+      unless (1970..9999).cover? @value
+        raise RangeError, "year #{@value} not in range 1970..9999"
       end
     end
 

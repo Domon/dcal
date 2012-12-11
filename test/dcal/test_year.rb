@@ -8,6 +8,7 @@ class TestYear < Test::Unit::TestCase
 
   def test_new
     assert_raise(RangeError) { DCal::Year.new(1900) }
+    assert_raise(RangeError) { DCal::Year.new(99999) }
   end
 
   def test_comparable
