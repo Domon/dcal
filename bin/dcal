@@ -11,5 +11,9 @@ unless month && year
   exit
 end
 
-cal = DCal::Cal.new month, year
-print cal.output
+begin
+  cal = DCal::Cal.new month, year
+  print cal.output
+rescue RangeError => e
+  puts "dcal: #{e.message}"
+end
