@@ -1,5 +1,9 @@
 # DCal
 
+[![Code Climate](https://codeclimate.com/badge.png)][codeclimate]
+
+[codeclimate]: https://codeclimate.com/github/Domon/dcal
+
 Just a stupid `cal`.
 
 ## Installation
