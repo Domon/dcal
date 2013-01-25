@@ -1,7 +1,9 @@
 # DCal
 
+[![Build Status](https://travis-ci.org/Domon/dcal.png)][travis]
 [![Code Climate](https://codeclimate.com/badge.png)][codeclimate]
 
+[travis]: https://travis-ci.org/Domon/dcal
 [codeclimate]: https://codeclimate.com/github/Domon/dcal
 
 Just a stupid `cal`.
