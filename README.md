@@ -1,8 +1,10 @@
 # DCal
 
+[![Gem Version](https://badge.fury.io/rb/dcal.png)][gem]
 [![Build Status](https://travis-ci.org/Domon/dcal.png)][travis]
 [![Code Climate](https://codeclimate.com/badge.png)][codeclimate]
 
+[gem]: https://rubygems.org/gems/dcal
 [travis]: https://travis-ci.org/Domon/dcal
 [codeclimate]: https://codeclimate.com/github/Domon/dcal
 
